@@ -24,3 +24,8 @@ def data_fetch(full_api_url):
     raw_api_dict = json.loads(output)
     url.close()
     return raw_api_dict
+if __name__ == '__main__':
+    try:
+        data_output(data_organizer(data_fetch(url_builder(2172797))))
+    except IOError:
+        print('no internet')
