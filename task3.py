@@ -1,9 +1,18 @@
 import sys
 import fileinput
+config_file_path = "./running-config.cfg"
+output_file = "./config-modified.cfg"
+find_pattern = "172."
+replace_pattern = "192."
 
+def main():
+    fin = open(config_file_path)
+    fout = open(output_file,'w')
+    for line in fin:
+        line_modified = line.replace(find_pattern,replace_pattern)
+        fout.write(line_modified)
+    fin.close()
+    fout.close()
 
-with open('running-config.cng' , 'w') as infile:
-  a=dict{a} 
-  dict(object MGMT-TRANSIT object SERVER-INSIDE-XCOMP-RADIUS) = values
-  
- 
+if __name__ == '__main__':
+main()
